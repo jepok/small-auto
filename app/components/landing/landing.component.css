@@ -1,0 +1,12 @@
+.hero {
+  background-image: url('http://lorempixel.com/1280/400/transport');
+  height: 280px;
+  width: 100%;
+  color: white;
+  text-shadow: 2px 3px 4px black;
+  margin-top: 0;
+}
+
+h1 {
+  margin: 0;
+}
