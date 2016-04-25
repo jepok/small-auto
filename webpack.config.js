@@ -12,7 +12,7 @@ var config = {
   output: {
     path: __dirname,
     filename: './public/bundle.js',
-    // publicPath: 'public'
+    publicPath: '/'
   },
   devtool: 'source-map',
    resolve: {

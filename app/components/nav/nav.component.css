@@ -4,6 +4,11 @@ padding-bottom: 0;
 color: #393e46;
 
 }
+
+a.button-collapse {
+  cursor: pointer;
+}
+
 li {
   color: #393e46;
 }
