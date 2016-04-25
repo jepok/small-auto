@@ -1,5 +1,19 @@
 .nav {
 height: 45px;
 padding-bottom: 0;
+color: #393e46;
 
 }
+li {
+  color: #393e46;
+}
+
+.nav-wrapper {
+  border-bottom: 3px solid #FD7014;
+  background-color: #393e46;
+  color: #EEEEEE;
+  }
+/*
+.brand-logo {
+  color: #393e46;
+}*/

@@ -36,6 +36,8 @@ var config = {
       new webpack.ProvidePlugin({
           $: "jquery",
           jQuery: "jquery",
+          "window.jQuery": "jquery",
+          "root.jQuery": "jquery",
           Hammer: "hammerjs/hammer"
       })
   ]

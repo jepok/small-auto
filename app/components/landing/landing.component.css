@@ -1,12 +1,21 @@
-.hero {
-  background-image: url('http://lorempixel.com/1280/400/transport');
-  height: 280px;
-  width: 100%;
-  color: white;
-  text-shadow: 2px 3px 4px black;
-  margin-top: 0;
+.landing {
+  background-color: #eeeeee;
 }
 
+.hero {
+  background-image: url('/images/dealership.jpg');
+  background-size: cover;
+  height: 350px;
+  width: 100%;
+  color: #393e46;
+  /*text-shadow: 2px 3px 4px black;*/
+  margin-top: 0;
+  border-bottom: 3px solid #FD7014;
+}
+
+.card, .card-panel {
+  background-color: #FD7014;
+}
 h1 {
   margin: 0;
 }

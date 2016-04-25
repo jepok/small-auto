@@ -1,6 +1,7 @@
 import { Component }  from 'angular2/core';
 import {MaterializeDirective} from "angular2-materialize";
 
+ var Car = [];
 
 @Component({
   selector: 'featured-carousel',
@@ -11,4 +12,18 @@ import {MaterializeDirective} from "angular2-materialize";
 
 })
 
-export class FeaturedComponent { }
+export class FeaturedComponent {
+ cars = [
+   'Honda',
+   'Ford',
+   'Shelby',
+   'Mini'
+ ];
+
+ pricePerMonth = [
+   255,
+   300,
+   400,
+   200
+ ]
+}
