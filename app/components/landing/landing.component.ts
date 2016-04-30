@@ -1,5 +1,6 @@
 import { Component }  from 'angular2/core';
 import { FeaturedComponent } from '../featured/featured.component';
+import { SingleListingService } from '../../singleListing.service';
 
 @Component({
   selector: 'landing',

@@ -10,30 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var angular2_materialize_1 = require("angular2-materialize");
-var Car = [];
+var singleListing_service_1 = require('../../singleListing.service');
 var FeaturedComponent = (function () {
-    function FeaturedComponent() {
-        this.cars = [
-            'Honda',
-            'Ford',
-            'Shelby',
-            'Mini'
-        ];
-        this.pricePerMonth = [
-            255,
-            300,
-            400,
-            200
-        ];
+    function FeaturedComponent(_singleListingService) {
+        this._singleListingService = _singleListingService;
     }
+    ;
+    FeaturedComponent.prototype.getSingleListings = function () {
+        var _this = this;
+        this._singleListingService.getSingleListings().then(function (singleListings) { return _this.singleListings = singleListings; });
+    };
+    FeaturedComponent.prototype.ngOnInit = function () {
+        this.getSingleListings();
+        console.log('ok onit', this.singleListings);
+    };
     FeaturedComponent = __decorate([
         core_1.Component({
             selector: 'featured-carousel',
             templateUrl: '/app/components/featured/featured.component.html',
             styleUrls: ['app/components/featured/featured.component.css'],
-            directives: [angular2_materialize_1.MaterializeDirective]
+            directives: [angular2_materialize_1.MaterializeDirective],
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [singleListing_service_1.SingleListingService])
     ], FeaturedComponent);
     return FeaturedComponent;
 }());

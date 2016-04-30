@@ -1,13 +1,22 @@
+<div>
+  <ul>
+    <li *ngFor="let single of singleListings">
+<div>
+   {{single}}
+</div>
 
-
-  <div materialize="carousel" class="carousel">
-    <a class="carousel-item">
+      <span>{{single.id}}</span> {{single.title}}
+    </li>
+</ul>
+<!-- </div>
+  <div materialize="carousel" class="carousel" (window:resize)="onResize($event)">
+    <a *ngFor="#singleListing of singleListings" class="carousel-item">
       <div class="caption center-align">
-        <h3>Check out this {{cars[2]}}</h3>
-        <h5 class="light">only {{pricePerMonth[2] |currency:'USD':true:'3.2-2' }} a month.</h5>
+        <h3>Check out this {{singleListing.title}}</h3>
+        <h5 class="light">only {{singleListing.monthlyPrice |currency:'USD':true:'3.2-2' }} a month.</h5>
       </div><img src="http://lorempixel.com/800/600/transport/1">
-    </a>
-    <a class="carousel-item" >
+    </a> -->
+    <!-- <a class="carousel-item" >
       <div class="caption center-align">
         <h3>Check out this {{cars[1]}}</h3>
         <h5 class="light">only {{pricePerMonth[1] |currency:'USD':true:'3.2-2' }} a month.</h5>
@@ -25,5 +34,5 @@
       </div>
       <img src="http://lorempixel.com/800/600/transport/4">
     </a>
-    <a class="carousel-item"><img src="http://lorempixel.com/800/500/transport/5"></a>
+    <a class="carousel-item"><img src="http://lorempixel.com/800/500/transport/5"></a> -->
   </div>

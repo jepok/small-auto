@@ -1,13 +1,16 @@
-import {Component} from 'angular2/core';
+import {Component, ChangeDetectorRef, ChangeDetectionStrategy} from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 import {LandingComponent} from './components/landing/landing.component';
-import "angular2-materialize";
-import {NavComponent} from './components/nav/nav.component';
 
+// currently angular2 materialize is listed on the index page instead of imported 
+// import "angular2-materialize";
+import {NavComponent} from './components/nav/nav.component';
+import { SingleListingService } from './singleListing.service';
 
 
 @Component({
     selector: 'my-app',
+    changeDetection: ChangeDetectionStrategy.CheckAlways,
     template: `
     <main-navbar></main-navbar>
 
@@ -19,7 +22,8 @@ import {NavComponent} from './components/nav/nav.component';
       ROUTER_DIRECTIVES,
     ],
     providers: [
-      ROUTER_PROVIDERS
+      ROUTER_PROVIDERS,
+      SingleListingService
     ]
 
 })

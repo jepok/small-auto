@@ -11,14 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
 var landing_component_1 = require('./components/landing/landing.component');
-require("angular2-materialize");
+// currently angular2 materialize is listed on the index page instead of imported 
+// import "angular2-materialize";
 var nav_component_1 = require('./components/nav/nav.component');
+var singleListing_service_1 = require('./singleListing.service');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
+            changeDetection: core_1.ChangeDetectionStrategy.CheckAlways,
             template: "\n    <main-navbar></main-navbar>\n\n    <router-outlet></router-outlet>\n    ",
             styleUrls: ['app/app.component.css'],
             directives: [
@@ -26,7 +29,8 @@ var AppComponent = (function () {
                 router_1.ROUTER_DIRECTIVES,
             ],
             providers: [
-                router_1.ROUTER_PROVIDERS
+                router_1.ROUTER_PROVIDERS,
+                singleListing_service_1.SingleListingService
             ]
         }),
         router_1.RouteConfig([
