@@ -1,19 +1,17 @@
-# Angular2 Quickstart App
+The small-auto project is a single page app built in Angular2.
 
-This repo is the end result of the "[5 min quickstart](https://angular.io/docs/ts/latest/quickstart.html)" guide at [angular.io](https://angular.io)
+It is intended to be a gallery and contact site for a small auto dealership.
 
-> Let's start from zero and build a super simple Angular 2 application in TypeScript.
-> <small>https://angular.io/docs/ts/latest/quickstart.html</small>
+It will include:
 
-## Install
+- a landing page with featured gallery carousel
+- a gallery page to show off the whole gallery
+- a single car page
+- an admin dashboard where the dealer can manage the gallery, upload pictures, and check on messages
 
-    git clone https://github.com/stigok/angular2-quickstart
-    cd angular2-quickstart
-    npm install
-    npm start
+The project is built in Angular2 (typescript) with webpack and Materialize for Angular2.
 
-## Working with TypeScript
+https://github.com/webpack/webpack
 
-I was new to TypeScript before looking on Angular2. The Atom plugin [atom-typescript](https://github.com/TypeStrong/atom-typescript) made transitioning easy with built-in linting, auto-complete and more.
+https://github.com/InfomediaLtd/angular2-materialize
 
-    apm install atom-typescript
