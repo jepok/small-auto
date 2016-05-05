@@ -11,13 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
 var landing_component_1 = require('./components/landing/landing.component');
-// currently angular2 materialize is listed on the index page instead of imported 
+// currently angular2 materialize is listed on the index page instead of imported
 // import "angular2-materialize";
 var nav_component_1 = require('./components/nav/nav.component');
 var singleListing_service_1 = require('./singleListing.service');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(_singleListingService) {
+        this._singleListingService = _singleListingService;
     }
+    AppComponent.prototype.ngOnInit = function () {
+        console.log("app oninit");
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
@@ -41,7 +45,7 @@ var AppComponent = (function () {
                 useAsDefault: true
             }
         ]), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [singleListing_service_1.SingleListingService])
     ], AppComponent);
     return AppComponent;
 }());

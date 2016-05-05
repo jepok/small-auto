@@ -1,4 +1,5 @@
-import { Component, OnInit }  from 'angular2/core';
+import { Component }  from 'angular2/core';
+import { OnInit } from 'angular2/core';
 import {MaterializeDirective} from "angular2-materialize";
 import { SingleListing } from '../../singleListing';
 import { SingleListingService } from '../../singleListing.service';
@@ -10,24 +11,33 @@ import { SingleListingService } from '../../singleListing.service';
   templateUrl: '/app/components/featured/featured.component.html',
   styleUrls: ['app/components/featured/featured.component.css'],
   directives: [MaterializeDirective],
-
-
 })
 
 export class FeaturedComponent implements OnInit {
 
-  singleListings: SingleListing [];
+  singleListings: SingleListing[];
+  featuredListings: SingleListing[];
+
+  constructor(private _singleListingService:SingleListingService){ }
 
 
-    constructor(private _singleListingService:SingleListingService) {
-    };
-
-    getSingleListings() {
-      this._singleListingService.getSingleListings().then(singleListings => this.singleListings = singleListings);
+    getFeatured() {
+    this._singleListingService.getSingleFeaturedListings().then(featuredListings => this.featuredListings = featuredListings);
+    console.log(this.featuredListings);
+    }
+    getSingle() {
+    this._singleListingService.getSingleListings().then(singleListings => this.singleListings = singleListings);
+      console.log(this.singleListings);
     }
     ngOnInit() {
-      this.getSingleListings();
-      console.log('ok onit',this.singleListings);
+      this.getSingle();
+      this.getFeatured();
+      console.log('get to oninit');
+      console.log('ok onit',SingleListing);
+    }
+    onResize(event){
+      this.ngOnInit();
+      console.log('resizing here',this.singleListings);
     }
 
 }

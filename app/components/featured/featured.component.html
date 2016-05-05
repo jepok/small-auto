@@ -1,5 +1,9 @@
-<div>
+<div (window:resize)="onResize($event)">
   <ul>
+    <li>
+      {{featuredListings}}
+    </li>
+
     <li *ngFor="let single of singleListings">
 <div>
    {{single}}
@@ -7,6 +11,9 @@
 
       <span>{{single.id}}</span> {{single.title}}
     </li>
+</ul>
+<ul *ngIf="!singleListings">
+  Hello there buddy
 </ul>
 <!-- </div>
   <div materialize="carousel" class="carousel" (window:resize)="onResize($event)">

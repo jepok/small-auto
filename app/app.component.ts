@@ -1,8 +1,8 @@
-import {Component, ChangeDetectorRef, ChangeDetectionStrategy} from 'angular2/core';
+import {Component, ChangeDetectorRef, ChangeDetectionStrategy, OnInit} from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 import {LandingComponent} from './components/landing/landing.component';
 
-// currently angular2 materialize is listed on the index page instead of imported 
+// currently angular2 materialize is listed on the index page instead of imported
 // import "angular2-materialize";
 import {NavComponent} from './components/nav/nav.component';
 import { SingleListingService } from './singleListing.service';
@@ -38,4 +38,10 @@ import { SingleListingService } from './singleListing.service';
 ])
 
 
-export class AppComponent { }
+export class AppComponent implements OnInit {
+  constructor(private _singleListingService:SingleListingService){ }
+
+  ngOnInit() {
+    console.log("app oninit");
+  }
+  }
