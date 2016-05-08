@@ -6,7 +6,7 @@ import {LandingComponent} from './components/landing/landing.component';
 // import "angular2-materialize";
 import {NavComponent} from './components/nav/nav.component';
 import { SingleListingService } from './singleListing.service';
-
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 @Component({
     selector: 'my-app',
@@ -34,6 +34,11 @@ import { SingleListingService } from './singleListing.service';
     name: 'Landing',
     component: LandingComponent,
     useAsDefault: true
+  },
+  {
+    path: '/gallery',
+    name: 'Gallery',
+    component: GalleryComponent,
   }
 ])
 

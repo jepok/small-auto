@@ -15,6 +15,7 @@ var landing_component_1 = require('./components/landing/landing.component');
 // import "angular2-materialize";
 var nav_component_1 = require('./components/nav/nav.component');
 var singleListing_service_1 = require('./singleListing.service');
+var gallery_component_1 = require('./components/gallery/gallery.component');
 var AppComponent = (function () {
     function AppComponent(_singleListingService) {
         this._singleListingService = _singleListingService;
@@ -43,6 +44,11 @@ var AppComponent = (function () {
                 name: 'Landing',
                 component: landing_component_1.LandingComponent,
                 useAsDefault: true
+            },
+            {
+                path: '/gallery',
+                name: 'Gallery',
+                component: gallery_component_1.GalleryComponent,
             }
         ]), 
         __metadata('design:paramtypes', [singleListing_service_1.SingleListingService])
