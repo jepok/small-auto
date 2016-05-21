@@ -23,23 +23,24 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     ],
     providers: [
       ROUTER_PROVIDERS,
-      SingleListingService
+
     ]
 
 })
 
 @RouteConfig([
   {
-    path: '/landing',
+    path: '/gallery',
+    name: 'Gallery',
+    component: GalleryComponent,
+  },
+  {
+    path: '/',
     name: 'Landing',
     component: LandingComponent,
     useAsDefault: true
   },
-  {
-    path: '/gallery',
-    name: 'Gallery',
-    component: GalleryComponent,
-  }
+
 ])
 
 

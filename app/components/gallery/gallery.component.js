@@ -9,20 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
+var router_1 = require('angular2/router');
 var singleListing_service_1 = require('../../singleListing.service');
 var GalleryComponent = (function () {
     function GalleryComponent(_singleListingService) {
         this._singleListingService = _singleListingService;
     }
+    GalleryComponent.prototype.getSingle = function () {
+        var _this = this;
+        this._singleListingService.getSingleListings().then(function (singleListings) { return _this.singleListings = singleListings; });
+        console.log(this.singleListings);
+    };
     GalleryComponent.prototype.ngOnInit = function () {
+        this.getSingle();
         console.log('onInit in gallery');
     };
     GalleryComponent = __decorate([
         core_1.Component({
             selector: 'gallery-comp',
-            templateUrl: '/app/components/gallery/galler.component.html',
+            templateUrl: '/app/components/gallery/gallery.component.html',
             styleUrls: ['app/components/gallery/gallery.component.css'],
-            directives: []
+            directives: [router_1.ROUTER_DIRECTIVES],
         }), 
         __metadata('design:paramtypes', [singleListing_service_1.SingleListingService])
     ], GalleryComponent);

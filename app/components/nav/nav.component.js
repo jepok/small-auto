@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var angular2_materialize_1 = require("angular2-materialize");
+var router_1 = require('angular2/router');
 var NavComponent = (function () {
     function NavComponent() {
     }
@@ -18,7 +19,9 @@ var NavComponent = (function () {
             selector: 'main-navbar',
             templateUrl: '/app/components/nav/nav.component.html',
             styleUrls: ['app/components/nav/nav.component.css'],
-            directives: [angular2_materialize_1.MaterializeDirective]
+            directives: [angular2_materialize_1.MaterializeDirective,
+                router_1.ROUTER_DIRECTIVES
+            ]
         }), 
         __metadata('design:paramtypes', [])
     ], NavComponent);

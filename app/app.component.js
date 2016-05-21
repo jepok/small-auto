@@ -35,21 +35,20 @@ var AppComponent = (function () {
             ],
             providers: [
                 router_1.ROUTER_PROVIDERS,
-                singleListing_service_1.SingleListingService
             ]
         }),
         router_1.RouteConfig([
             {
-                path: '/landing',
+                path: '/gallery',
+                name: 'Gallery',
+                component: gallery_component_1.GalleryComponent,
+            },
+            {
+                path: '/',
                 name: 'Landing',
                 component: landing_component_1.LandingComponent,
                 useAsDefault: true
             },
-            {
-                path: '/gallery',
-                name: 'Gallery',
-                component: gallery_component_1.GalleryComponent,
-            }
         ]), 
         __metadata('design:paramtypes', [singleListing_service_1.SingleListingService])
     ], AppComponent);

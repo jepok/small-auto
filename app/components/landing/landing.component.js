@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var featured_component_1 = require('../featured/featured.component');
+var router_1 = require('angular2/router');
 var LandingComponent = (function () {
     function LandingComponent() {
     }
@@ -20,6 +21,7 @@ var LandingComponent = (function () {
             styleUrls: ['app/components/landing/landing.component.css'],
             directives: [
                 featured_component_1.FeaturedComponent,
+                router_1.ROUTER_DIRECTIVES
             ]
         }), 
         __metadata('design:paramtypes', [])
