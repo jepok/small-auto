@@ -24,6 +24,18 @@ var SingleListingService = (function () {
         return Promise.resolve(mockSingleListings_1.SINGLELISTINGS)
             .then(function (singleListings) { return singleListings.filter(function (singleListing) { return singleListing.featured === true; }); });
     };
+    SingleListingService.prototype.getSingleUnderListings = function () {
+        return Promise.resolve(mockSingleListings_1.SINGLELISTINGS)
+            .then(function (singleListings) { return singleListings.filter(function (singleListing) { return singleListing.price < 7000; }); });
+    };
+    SingleListingService.prototype.getSingleCarListings = function () {
+        return Promise.resolve(mockSingleListings_1.SINGLELISTINGS)
+            .then(function (singleListings) { return singleListings.filter(function (singleListing) { return singleListing.isTruck === false; }); });
+    };
+    SingleListingService.prototype.getSingleTruckListings = function () {
+        return Promise.resolve(mockSingleListings_1.SINGLELISTINGS)
+            .then(function (singleListings) { return singleListings.filter(function (singleListing) { return singleListing.isTruck === true; }); });
+    };
     SingleListingService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])

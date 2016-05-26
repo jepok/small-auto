@@ -17,4 +17,25 @@ import { Injectable } from 'angular2/core';
           singleListings => singleListings.filter(singleListing => singleListing.featured === true)
       );
     }
+
+    getSingleUnderListings() {
+      return Promise.resolve(SINGLELISTINGS)
+        .then(
+          singleListings => singleListings.filter(singleListing => singleListing.price < 7000)
+      );
+    }
+
+    getSingleCarListings() {
+      return Promise.resolve(SINGLELISTINGS)
+        .then(
+          singleListings => singleListings.filter(singleListing => singleListing.isTruck === false)
+      );
+    }
+
+    getSingleTruckListings() {
+      return Promise.resolve(SINGLELISTINGS)
+        .then(
+          singleListings => singleListings.filter(singleListing => singleListing.isTruck === true)
+      );
+    }
   }

@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
 var singleListing_service_1 = require('../../singleListing.service');
+var angular2_materialize_1 = require("angular2-materialize");
 var GalleryComponent = (function () {
     function GalleryComponent(_singleListingService) {
         this._singleListingService = _singleListingService;
@@ -24,12 +25,26 @@ var GalleryComponent = (function () {
         this.getSingle();
         console.log('onInit in gallery');
     };
+    GalleryComponent.prototype.getUnder = function () {
+        var _this = this;
+        this._singleListingService.getSingleUnderListings().then(function (singleListings) { return _this.singleListings = singleListings; });
+    };
+    GalleryComponent.prototype.getTruck = function () {
+        var _this = this;
+        this._singleListingService.getSingleTruckListings().then(function (singleListings) { return _this.singleListings = singleListings; });
+    };
+    GalleryComponent.prototype.getFeatured = function () {
+        var _this = this;
+        this._singleListingService.getSingleFeaturedListings().then(function (singleListings) { return _this.singleListings = singleListings; });
+    };
     GalleryComponent = __decorate([
         core_1.Component({
             selector: 'gallery-comp',
             templateUrl: '/app/components/gallery/gallery.component.html',
             styleUrls: ['app/components/gallery/gallery.component.css'],
-            directives: [router_1.ROUTER_DIRECTIVES],
+            directives: [router_1.ROUTER_DIRECTIVES,
+                angular2_materialize_1.MaterializeDirective
+            ],
         }), 
         __metadata('design:paramtypes', [singleListing_service_1.SingleListingService])
     ], GalleryComponent);
