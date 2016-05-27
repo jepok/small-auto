@@ -12,14 +12,17 @@ var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
 var singleListing_service_1 = require('../../singleListing.service');
 var angular2_materialize_1 = require("angular2-materialize");
+var core_2 = require('angular2/core');
 var GalleryComponent = (function () {
-    function GalleryComponent(_singleListingService) {
+    function GalleryComponent(_singleListingService, _cdRef) {
         this._singleListingService = _singleListingService;
+        this._cdRef = _cdRef;
     }
     GalleryComponent.prototype.getSingle = function () {
         var _this = this;
         this._singleListingService.getSingleListings().then(function (singleListings) { return _this.singleListings = singleListings; });
         console.log(this.singleListings);
+        this._cdRef.detectChanges();
     };
     GalleryComponent.prototype.ngOnInit = function () {
         this.getSingle();
@@ -28,14 +31,22 @@ var GalleryComponent = (function () {
     GalleryComponent.prototype.getUnder = function () {
         var _this = this;
         this._singleListingService.getSingleUnderListings().then(function (singleListings) { return _this.singleListings = singleListings; });
+        this._cdRef.detectChanges();
     };
     GalleryComponent.prototype.getTruck = function () {
         var _this = this;
         this._singleListingService.getSingleTruckListings().then(function (singleListings) { return _this.singleListings = singleListings; });
+        this._cdRef.detectChanges();
     };
     GalleryComponent.prototype.getFeatured = function () {
         var _this = this;
         this._singleListingService.getSingleFeaturedListings().then(function (singleListings) { return _this.singleListings = singleListings; });
+        this._cdRef.detectChanges();
+    };
+    GalleryComponent.prototype.getCar = function () {
+        var _this = this;
+        this._singleListingService.getSingleCarListings().then(function (singleListings) { return _this.singleListings = singleListings; });
+        this._cdRef.detectChanges();
     };
     GalleryComponent = __decorate([
         core_1.Component({
@@ -46,7 +57,7 @@ var GalleryComponent = (function () {
                 angular2_materialize_1.MaterializeDirective
             ],
         }), 
-        __metadata('design:paramtypes', [singleListing_service_1.SingleListingService])
+        __metadata('design:paramtypes', [singleListing_service_1.SingleListingService, core_2.ChangeDetectorRef])
     ], GalleryComponent);
     return GalleryComponent;
 }());

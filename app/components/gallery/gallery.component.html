@@ -2,21 +2,21 @@
   <h1 class="center-align">Check out our current in stock Autos</h1>
 <div class="center-align">
   <h5>Filter by:</h5>
-  <a (onclick)="getFeatured()" class="waves-effect black-text waves-purple green lighten-3 btn">Featured</a>
-  <a class="waves-effect black-text waves-purple green lighten-3 btn">Most Recent</a>
-  <a class="waves-effect waves-purple green lighten-3 btn">Cars</a>
-  <a class="waves-effect waves-purple green lighten-3 btn">Trucks</a>
-  <a class="waves-effect waves-purple green lighten-3 btn">Under $7000</a>
+  <a (click)="getFeatured()" class="waves-effect black-text waves-purple green lighten-3 btn">Featured</a>
+  <a (click)="getSingle()" class="waves-effect black-text waves-purple green lighten-3 btn">All</a>
+  <a (click)="getCar()" class="waves-effect waves-purple green lighten-3 btn">Cars</a>
+  <a (click)="getTruck()" class="waves-effect waves-purple green lighten-3 btn">Trucks</a>
+  <a (click)="getUnder()" class="waves-effect waves-purple green lighten-3 btn">Under $7000</a>
 
 </div>
-  <div class="gallery-container row">
-    <div *ngIf="singleListings" *ngFor="let single of singleListings">
+  <div class="gallery-container row" *ngIf="singleListings">
+    <div *ngFor="let single of singleListings">
 
       <div class="hoverable item col s4">
         <div class="blurb">
           <h4 class="auto-title">{{single.title}}</h4>
           <h4>{{single.summary}}</h4>
-          <h5 class="light">only {{single.monthlyPrice |currency:'USD':true:'3.2-2' }} a month.</h5>
+          <h5 class="light">{{single.price |currency:'USD':true:'3.2'}} @ only {{single.monthlyPrice |currency:'USD':true:'3.2-2' }} a month.</h5>
         </div>
         <img src="http://lorempixel.com/90/70/transport/5">
       </div>
