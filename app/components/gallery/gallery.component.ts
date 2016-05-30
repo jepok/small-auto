@@ -1,17 +1,16 @@
-import { Component, OnInit }  from 'angular2/core';
-import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
+import { Component, OnInit, ChangeDetectorRef }  from 'angular2/core';
+import { RouteConfig, Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 import { SingleListingService } from '../../singleListing.service';
 import { SingleListing } from '../../singleListing';
 import {MaterializeDirective} from "angular2-materialize";
-import {ChangeDetectorRef} from 'angular2/core';
 
 
 @Component({
   selector: 'gallery-comp',
   templateUrl: '/app/components/gallery/gallery.component.html',
   styleUrls: ['app/components/gallery/gallery.component.css'],
-  directives: [ROUTER_DIRECTIVES,
-                MaterializeDirective
+  directives: [ROUTER_DIRECTIVES
+                // MaterializeDirective
               ],
 
 
@@ -23,7 +22,8 @@ export class GalleryComponent implements OnInit {
 
 
   constructor(private _singleListingService:SingleListingService,
-                private _cdRef: ChangeDetectorRef) { }
+                private _cdRef: ChangeDetectorRef,
+              private router: Router) { }
 
   getSingle() {
     this._singleListingService.getSingleListings().then(singleListings => this.singleListings = singleListings)
@@ -54,5 +54,9 @@ export class GalleryComponent implements OnInit {
   getCar() {
     this._singleListingService.getSingleCarListings().then(singleListings => this.singleListings = singleListings)
     this._cdRef.detectChanges();
+  }
+
+  onSelect(single: SingleListing) {
+    this.router.navigate(['SingleDetail', {id: single.id}]);
   }
 }

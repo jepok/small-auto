@@ -11,12 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
 var singleListing_service_1 = require('../../singleListing.service');
-var angular2_materialize_1 = require("angular2-materialize");
-var core_2 = require('angular2/core');
 var GalleryComponent = (function () {
-    function GalleryComponent(_singleListingService, _cdRef) {
+    function GalleryComponent(_singleListingService, _cdRef, router) {
         this._singleListingService = _singleListingService;
         this._cdRef = _cdRef;
+        this.router = router;
     }
     GalleryComponent.prototype.getSingle = function () {
         var _this = this;
@@ -48,16 +47,18 @@ var GalleryComponent = (function () {
         this._singleListingService.getSingleCarListings().then(function (singleListings) { return _this.singleListings = singleListings; });
         this._cdRef.detectChanges();
     };
+    GalleryComponent.prototype.onSelect = function (single) {
+        this.router.navigate(['SingleDetail', { id: single.id }]);
+    };
     GalleryComponent = __decorate([
         core_1.Component({
             selector: 'gallery-comp',
             templateUrl: '/app/components/gallery/gallery.component.html',
             styleUrls: ['app/components/gallery/gallery.component.css'],
-            directives: [router_1.ROUTER_DIRECTIVES,
-                angular2_materialize_1.MaterializeDirective
+            directives: [router_1.ROUTER_DIRECTIVES
             ],
         }), 
-        __metadata('design:paramtypes', [singleListing_service_1.SingleListingService, core_2.ChangeDetectorRef])
+        __metadata('design:paramtypes', [singleListing_service_1.SingleListingService, core_1.ChangeDetectorRef, router_1.Router])
     ], GalleryComponent);
     return GalleryComponent;
 }());

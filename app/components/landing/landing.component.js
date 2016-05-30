@@ -14,6 +14,18 @@ var router_1 = require('angular2/router');
 var LandingComponent = (function () {
     function LandingComponent() {
     }
+    LandingComponent.prototype.ngAfterContentInit = function () {
+        console.log('content inited');
+    };
+    LandingComponent.prototype.ngAfterContentChecked = function () {
+        console.log('content checked');
+    };
+    LandingComponent.prototype.ngAfterViewInit = function () {
+        console.log('view inited');
+    };
+    LandingComponent.prototype.ngOnInit = function () {
+        console.log('landing oninit');
+    };
     LandingComponent = __decorate([
         core_1.Component({
             selector: 'landing',

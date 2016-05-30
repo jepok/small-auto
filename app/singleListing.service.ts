@@ -6,7 +6,7 @@ import { Injectable } from 'angular2/core';
     getSingleListings() {
       return Promise.resolve(SINGLELISTINGS);
     };
-    getSingleListing(id:number) {
+    getSingleListing(id:number | string) {
       return Promise.resolve(SINGLELISTINGS).then(
         singleListings => singleListings.filter(singleListing => singleListing.id === id)[0]
       );

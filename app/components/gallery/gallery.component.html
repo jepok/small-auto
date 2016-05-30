@@ -9,10 +9,10 @@
   <a (click)="getUnder()" class="waves-effect waves-purple green lighten-3 btn">Under $7000</a>
 
 </div>
-  <div class="gallery-container row" *ngIf="singleListings">
+  <div class="gallery-container row" >
     <div *ngFor="let single of singleListings">
 
-      <div class="hoverable item col s4">
+      <div (click)="onSelect(single)" class="hoverable item col s4">
         <div class="blurb">
           <h4 class="auto-title">{{single.title}}</h4>
           <h4>{{single.summary}}</h4>

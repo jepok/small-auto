@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
 var landing_component_1 = require('./components/landing/landing.component');
+var single_component_1 = require('./components/single/single.component');
 // currently angular2 materialize is listed on the index page instead of imported
 // import "angular2-materialize";
 var nav_component_1 = require('./components/nav/nav.component');
@@ -49,6 +50,11 @@ var AppComponent = (function () {
                 component: landing_component_1.LandingComponent,
                 useAsDefault: true
             },
+            {
+                path: '/detail/:id',
+                name: 'SingleDetail',
+                component: single_component_1.SingleComponent,
+            }
         ]), 
         __metadata('design:paramtypes', [singleListing_service_1.SingleListingService])
     ], AppComponent);

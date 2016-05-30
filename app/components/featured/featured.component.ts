@@ -35,9 +35,16 @@ export class FeaturedComponent implements OnInit {
       console.log('get to oninit');
       console.log('ok onit',SingleListing);
     }
-    onResize(event){
-      this.ngOnInit();
-      console.log('resizing here',this.singleListings);
+    ngAfterContentInit() {
+      console.log('content inited');
+
     }
 
+    ngAfterContentChecked() {
+      console.log('content checked');
+    }
+    ngAfterViewInit() {
+      console.log('view inited');
+    }
+  
 }

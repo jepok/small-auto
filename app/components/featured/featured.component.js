@@ -32,9 +32,14 @@ var FeaturedComponent = (function () {
         console.log('get to oninit');
         console.log('ok onit', singleListing_1.SingleListing);
     };
-    FeaturedComponent.prototype.onResize = function (event) {
-        this.ngOnInit();
-        console.log('resizing here', this.singleListings);
+    FeaturedComponent.prototype.ngAfterContentInit = function () {
+        console.log('content inited');
+    };
+    FeaturedComponent.prototype.ngAfterContentChecked = function () {
+        console.log('content checked');
+    };
+    FeaturedComponent.prototype.ngAfterViewInit = function () {
+        console.log('view inited');
     };
     FeaturedComponent = __decorate([
         core_1.Component({

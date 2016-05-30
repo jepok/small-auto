@@ -1,4 +1,4 @@
-import { Component }  from 'angular2/core';
+import { Component, OnInit }  from 'angular2/core';
 import { FeaturedComponent } from '../featured/featured.component';
 import { SingleListingService } from '../../singleListing.service';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
@@ -15,4 +15,21 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
 
 })
 
-export class LandingComponent { }
+export class LandingComponent implements OnInit {
+
+  ngAfterContentInit() {
+    console.log('content inited');
+
+  }
+
+  ngAfterContentChecked() {
+    console.log('content checked');
+  }
+  ngAfterViewInit() {
+    console.log('view inited');
+  }
+ ngOnInit() {
+  console.log('landing oninit');
+  }
+
+}
