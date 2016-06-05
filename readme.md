@@ -1,3 +1,6 @@
+**This project is deprecated and replaced by sm-auto**
+
+
 The small-auto project is a single page app built in Angular2.
 
 It is intended to be a gallery and contact site for a small auto dealership.
